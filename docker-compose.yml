@@ -1,0 +1,44 @@
+version: '3'
+
+# docker-compose up --build -d 
+# docker-compose down 
+# based off of https://github.com/shoyo/react-flask-docker-boilerplate
+# then added nginx
+
+services:
+  api:
+    build: api
+    volumes:
+      - ./api:/backend
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+    ports:
+      - "5000:5000"
+    command: gunicorn -w 1 -b 0.0.0.0:5000 app:app
+
+  client:
+    build: client
+    command: ["npm", "start"]
+    volumes:
+      - ./client:/frontend
+      - node-modules:/frontend/node_modules
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api
+
+  # nginx_api:
+  #   container_name: nginx_api
+  #   restart: always
+  #   build: ./nginx
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - api
+  #     - client
+
+volumes:
+  node-modules:
