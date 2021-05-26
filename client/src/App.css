@@ -1,3 +1,35 @@
+.infographicBlock {
+  display: block;  
+  width: 100%;
+  text-align: center;
+  margin: 200 200;
+  padding: 50 50;
+}
+.fullWidth {
+  width: 98% !important;
+  margin: 10px 10px !important;
+  padding: 5 !important;
+}
+.flexContainer {
+  display: flex;
+  flex-flow: row;
+}
+.flexsideHeader {
+  flex: 1 auto;
+  margin-right: 20px;
+}
+.flexside {
+  flex: 1 auto;
+
+}
+.flexmiddle {
+  flex: 3 0px;
+}
+.flexpassword {
+  flex: 3;
+  margin-top: 15px;
+  text-align: left;
+}
 .App {
   text-align: center;
 }

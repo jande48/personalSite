@@ -1,0 +1,20 @@
+{"name":"Jacob",
+    "children":[
+        {"name":"Education","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+            ]},
+        {"name":"Portfolio","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+            ]},
+        {"name":"Web Presence","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+            ]},
+        {"name":"Work History","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+            ]}
+    ]
+}
