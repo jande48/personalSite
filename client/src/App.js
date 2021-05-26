@@ -1,24 +1,12 @@
-import './App.css';
 import React from 'react';
-import {useState,useEffect} from 'react';
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-
-  const [state, setState] = useState([])
-  useEffect(() => {
-    fetch('/api/v1.0/test').then(response => {
-      if(response.status == 200){
-        return response.json()
-      }
-    }).then(data => setState(data))
-  
-  },)
-  console.log(state)
-
   return (
     <div className="App">
-      <div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -28,10 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Jacob
+          Learn React
         </a>
-
-      </div>
+        <br/><p>From server: <span id="server"> </span></p>
+      </header>
     </div>
   );
 }
