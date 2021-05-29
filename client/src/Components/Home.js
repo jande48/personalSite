@@ -2,14 +2,14 @@ import React, {useRef, useEffect, useState} from "react";
 import '../App.css';
 import Modal from 'react-modal'
 import bubbleChart from "./bubbleChart";
-import LSU from "./Modals/LSU"
-import BC from "./Modals/BC"
-import UT from "./Modals/UT"
+import LSU from "./Modals/LSU";
+import BC from "./Modals/BC";
+import UT from "./Modals/UT";
+import Stonk from "./Modals/Stonk";
 
 function Home() {
   
   const bubbleChartNode = useRef()  
-  const [modalOpen, setModalOpen] = useState(false)
   const [modalOpenArray, setModalOpenArray] = useState({'activated':'none'})
   Modal.setAppElement('#root');
   useEffect(() => {
@@ -31,18 +31,17 @@ function Home() {
     function getOpenModal(array){
       switch(array['activated']){
         case 'LSU':
-          return <LSU/>
-          break
+          return <LSU/>;
         case 'BC':
-          return <BC/>
-          break
+          return <BC/>;
         case 'UT':
-          return <UT/>
+          return <UT/>;
+        case 'stonk':
+          return <Stonk/>;
         default:
           return <h1>Not LSU</h1>
       }
     }
-    console.log(modalOpenArray)
     return (
     
     <div>

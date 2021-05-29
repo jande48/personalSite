@@ -62,7 +62,7 @@ function bubbleChart(refNode, setModalOpen) {
       .on("mouseout", function(event,d) { 
         if (typeof(d.children) === 'undefined') {
           d3.select(this).attr("fill", "#F2F2F2")
-        } else if (d.depth == 2 && d.height == 1) {
+        } else if (d.depth === 2 && d.height === 1) {
           d3.select(this).attr("fill", "#BFBFBF")
         } else {
           d3.select(this).attr("fill", "#7F7F7F")
@@ -71,40 +71,7 @@ function bubbleChart(refNode, setModalOpen) {
         
       })
       .on("click", (event, d) => (zoom(event, d), event.stopPropagation()));
-      //.on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
-
-  // const fillRect = svg.selectAll("g")
-  //       .selectAll("rect")
-  //         .data(root.descendants())
-  //         .join("rect")
-  //         .attr("x","50px")
-  //         .attr("y","50px")
-  //         .attr("width","100px")
-  //         .attr("height","100px")
-  //         .attr("fill", "white")
-  //         .style("fill-opacity", 0)
-
-        // .data(root.descendants())
-        // .enter()
-        // .append('rect')
-        // .attr("x","50px")
-        // .attr("y","50px")
-        // .attr("width","100px")
-        // .attr("height","100px")
-        // .attr("fill", d => d.depth == 2 && d.height == 1 ? "white" : "black")
-        // .selectAll("rect")
-        // .data(root.descendants())
-        // .join("rect")
-        //   .style("fill-opacity",1)
-        //   .style("display","inline")
-        
-        // .selectAll("rect")
-        // .data(root.descendants())
-        // .join("rect")
-        // //.style("fill-opacity", d => d.parent === root ? 1 : 0)
-        //   .style("fill-opacity", d => d.depth == 2 && d.height == 1 ? 1 : 0)
-        //   .style("display", d => d.depth == 2 && d.height == 1 ? "inline" : "none")
-
+      
   const label = svg.append("g")
       .style("font", "19px sans-serif")
       .attr("pointer-events", "none")
@@ -112,45 +79,11 @@ function bubbleChart(refNode, setModalOpen) {
     .selectAll("text")
     .data(root.descendants())
     .join("text")
-      .style("fill-opacity", d => d.depth == 2 && d.height == 1 ? 1 : 0)
-      .style("display", d => d.depth == 2 && d.height == 1 ? "inline" : "none")
+      .style("fill-opacity", d => d.depth === 2 && d.height === 1 ? 1 : 0)
+      .style("display", d => d.depth === 2 && d.height === 1 ? "inline" : "none")
       .text(d => d.data.name);
   
-  const school = svg.append("g")
-      .style("font", "16px sans-serif")
-      .attr("pointer-events", "none")
-      .attr("text-anchor", "middle")
-    .selectAll("text")
-    .data(root.descendants())
-    .join("text")
-      .style("fill-opacity", d => d.parent === root ? 1 : 0)
-      .style("display", function(d) { 
-        if(d.parent === root) { return "inline" }else{ return "none"}})
-      .text(d => d.data.school);
-
-  const gpa = svg.append("g")
-      .style("font", "16px sans-serif")
-      .attr("pointer-events", "none")
-      .attr("text-anchor", "middle")
-    .selectAll("text")
-    .data(root.descendants())
-    .join("text")
-      .style("fill-opacity", d => d.parent === root ? 1 : 0)
-      .style("display", function(d) { 
-        if(d.parent === root) { return "inline" }else{ return "none"}})
-      .text(d => d.data.GPA);
-
-    const student = svg.append("g")
-      .style("font", "16px sans-serif")
-      .attr("pointer-events", "none")
-      .attr("text-anchor", "middle")
-    .selectAll("text")
-    .data(root.descendants())
-    .join("text")
-      .style("fill-opacity", d => d.children === null ? 1 : 0)
-      .style("display", function(d) { 
-        if(d.children === null) { return "inline" }else{ return "none"}})
-      .text(d => d.data.student);
+  
 
   zoomTo([root.x, root.y, root.r * 2]);
 
@@ -160,15 +93,11 @@ function bubbleChart(refNode, setModalOpen) {
     view = v;
 
     label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-    student.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-    school.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]+ 5) * k})`);
-    gpa.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]+ 2.5) * k})`);
     node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
     node.attr("r", d => d.r * k);
   }
 
   function zoom(event, d) {
-    const focus0 = focus;
 
     focus = d;
     if (focus.depth === 3) {
@@ -193,55 +122,7 @@ function bubbleChart(refNode, setModalOpen) {
         .on("start", function(d) { if (d.parent === focus || d.children === null) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
 
-    school
-      //.filter(function(d) { return d.parent.parent === focus || this.style.display === "inline"; })
-      .transition(transition)
-        .style("fill-opacity", d => focus.depth === 3 ?  1 : 0 )
-        .on("start", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "none"
-          }})
-        .on("end", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "inline"
-          }})
-        
-    gpa
-      .transition(transition)
-        .style("fill-opacity", d => focus.depth === 3 ? 1 : 0)
-        .on("start", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "none"
-          }})
-        .on("end", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "inline"
-          }})
-
-    // fillRect
-    // .transition(transition)
-    // // .attr("fill", d => focus.depth === 3 ? "white" : "black")
-    // .on("start", function(d) { 
-    //   if (focus.depth === 3) {
-    //     this.attr.fill = "white"
-    //   }})
-    // .on("end", function(d) { 
-    //   if (focus.depth === 3) {
-    //     this.attr.fill = "black"
-
-    //   }})
-    student
-      .transition(transition)
-        .style("fill-opacity", d => focus.depth === 3 ? 1 : 0)
-        .on("start", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "none"
-          }})
-        .on("end", function(d) { 
-          if (focus.depth === 3) {
-            this.style.display = "inline"
-          }})
-    }
+      }
   }
 
   return svg.node();

@@ -20,7 +20,12 @@
 }
 .flexside {
   flex: 1 auto;
-
+}
+.flexsideCenter {
+  flex: 1 auto;
+  margin: auto;
+  width: 50%;
+  text-align: right;
 }
 .flexmiddle {
   flex: 3 0px;
@@ -58,6 +63,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+hr.solid {
+  border-top: 3px solid #bbb;
 }
 
 .App-link {
