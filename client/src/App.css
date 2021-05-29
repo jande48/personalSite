@@ -64,6 +64,13 @@
   color: #61dafb;
 }
 
+.vertical-center {
+  text-align:center;
+}
+
+.header-modal{
+  color:black
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

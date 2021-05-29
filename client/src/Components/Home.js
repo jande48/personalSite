@@ -2,14 +2,16 @@ import React, {useRef, useEffect, useState} from "react";
 import '../App.css';
 import Modal from 'react-modal'
 import bubbleChart from "./bubbleChart";
-
+import LSU from "./Modals/LSU"
+import BC from "./Modals/BC"
+import UT from "./Modals/UT"
 
 function Home() {
   
   const bubbleChartNode = useRef()  
   const [modalOpen, setModalOpen] = useState(false)
   const [modalOpenArray, setModalOpenArray] = useState({'activated':'none'})
-
+  Modal.setAppElement('#root');
   useEffect(() => {
     // const axios = require('axios').default;
     //   axios.get('/getPostPickle')
@@ -26,10 +28,25 @@ function Home() {
         bubbleChart(bubbleChartNode, setModalOpenArray)
   },[])
     
+    function getOpenModal(array){
+      switch(array['activated']){
+        case 'LSU':
+          return <LSU/>
+          break
+        case 'BC':
+          return <BC/>
+          break
+        case 'UT':
+          return <UT/>
+        default:
+          return <h1>Not LSU</h1>
+      }
+    }
+    console.log(modalOpenArray)
     return (
     
     <div>
-
+      
         <div className="flexContainer">
           
           <div className="flexside">
@@ -45,10 +62,13 @@ function Home() {
           <React.Fragment>
             <svg id="bubbleChart" className="fullWidth" ref={bubbleChartNode}></svg>
           </React.Fragment>
-          <button onClick={() => setModalOpen(true)}>Open</button>
-          <Modal isOpen={modalOpen}>
-            <h2 className="Modal-Header">modal title</h2>
-            <button onClick={() => setModalOpen(false)}>Close</button>
+          
+          
+          <Modal isOpen={modalOpenArray['activated']!=='none'}>
+            {getOpenModal(modalOpenArray)}
+            <div className="vertical-center">
+              <button type="button" className="btn btn-danger btn-lg" onClick={() => setModalOpenArray({'activated':'none'})}>Close</button>
+            </div>
           </Modal>
           
         </div>

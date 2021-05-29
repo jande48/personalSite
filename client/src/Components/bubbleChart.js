@@ -172,8 +172,8 @@ function bubbleChart(refNode, setModalOpen) {
 
     focus = d;
     if (focus.depth === 3) {
-      setModalOpen(true)
-    }
+      setModalOpen({'activated':focus.data.id})
+    }else{
 
     const transition = svg.transition()
         .duration(event.altKey ? 7500 : 750)
@@ -241,7 +241,7 @@ function bubbleChart(refNode, setModalOpen) {
           if (focus.depth === 3) {
             this.style.display = "inline"
           }})
-
+    }
   }
 
   return svg.node();
