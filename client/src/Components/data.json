@@ -1,20 +1,25 @@
 {"name":"Jacob",
     "children":[
-        {"name":"Education","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
-            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
-            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+        {"name":"Education","children":[{"name":"Louisiana State University","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"Boston College","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"University of Texas at Austin","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
             ]},
-        {"name":"Portfolio","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
-            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
-            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+        {"name":"Portfolio","children":[{"name":"StonkTA.com","student":"StonkTA.com","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"Raspberry Pi Dog Treat Dispenser","student":"Raspberry Pi Dog Treat Dispenser","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"Personal Site","student":"Personal Site","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5},
+            {"name":"Rock Physics","student":"Rock Physics","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
             ]},
-        {"name":"Web Presence","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
-            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
-            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+        {"name":"Web Presence","children":[{"name":"GitHub","student":"GitHub","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"Twitter","student":"Twitter","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"LinkedIn","student":"LinkedIn","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
             ]},
-        {"name":"Work History","children":[{"name":"LSU","student":"Louisiana State University","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
-            {"name":"BC","student":"Boston College","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
-            {"name":"UT","student":"University of Texas at Austin","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+        {"name":"Work History","children":[{"name":"Colmbine Corp","student":"Colmbine Corp","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"Kinnickinick Exploration","student":"Kinnickinick Exploration","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5},
+            {"name":"Royal Dutch Shell","student":"Royal Dutch Shell","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5},
+            {"name":"Freelance","student":"Freelance","school":"PhD - Geological Sciences","GPA":"GPA: 3.55","value":2.5}
+            ]},
+        {"name":"Volunteerism","children":[{"name":"BridgeBuilders","student":"BridgeBuilders","school":"BA - Petroleum Engineering","GPA":"GPA: 3.2","value":2.5},
+            {"name":"Engineers Without Borders","student":"Engineers Without Borders","school":"MS - Geological Sciences","GPA":"GPA: 3.5","value":2.5}
             ]}
     ]
 }

@@ -1,17 +1,14 @@
 import React, {useRef, useEffect, useState} from "react";
 import '../App.css';
-import * as d3 from 'd3';
-// import bridgeBuildersLogo from '../bridgeBuildersLetterHeadLogo.png'
-
+import Modal from 'react-modal'
 import bubbleChart from "./bubbleChart";
-// import thermometerChart from "./thermometerChart";
+
 
 function Home() {
   
-  const bubbleChartNode = useRef()
-  const thermometerChartNode = useRef()
-  const [pickle, setPickle] = useState({})
-
+  const bubbleChartNode = useRef()  
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpenArray, setModalOpenArray] = useState({'activated':'none'})
 
   useEffect(() => {
     // const axios = require('axios').default;
@@ -26,7 +23,7 @@ function Home() {
           
     //       bubbleChart(bubbleChartNode,response.data)
     //     })
-        bubbleChart(bubbleChartNode)
+        bubbleChart(bubbleChartNode, setModalOpenArray)
   },[])
     
     return (
@@ -40,13 +37,19 @@ function Home() {
           </div>
           <div className="flexmiddle"></div>
           <div className="flexsideHeader">
-           
+            <h4>Python / Javascript Developer</h4>
           </div>
         </div>
         <div className="fullWidth">
+          
           <React.Fragment>
-            <svg id="bubbleChart" className="fullWidth" ref={bubbleChartNode}/>
+            <svg id="bubbleChart" className="fullWidth" ref={bubbleChartNode}></svg>
           </React.Fragment>
+          <button onClick={() => setModalOpen(true)}>Open</button>
+          <Modal isOpen={modalOpen}>
+            <h2 className="Modal-Header">modal title</h2>
+            <button onClick={() => setModalOpen(false)}>Close</button>
+          </Modal>
           
         </div>
 
