@@ -102,6 +102,9 @@ function Home() {
           </Modal>
           
         </div>
+        <a href="/api/downloads/Resume_Jacob_Anderson_Dev.pdf" target="_blank">
+                <button type="submit" class="btn btn-primary btn-lg">Download Resume PDF</button>
+        </a>
 
     </div>
 
