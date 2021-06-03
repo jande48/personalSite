@@ -6,6 +6,17 @@ import LSU from "./Modals/LSU";
 import BC from "./Modals/BC";
 import UT from "./Modals/UT";
 import Stonk from "./Modals/Stonk";
+import Github from "./Modals/Github";
+import Twitter from "./Modals/Twitter";
+import Linkedin from "./Modals/Linkedin";
+import Freelance from "./Modals/Freelance";
+import RDS from "./Modals/RDS";
+import Kinnickinick from "./Modals/Kinnickinick";
+import Columbine from "./Modals/Columbine";
+import Personal from "./Modals/Personal";
+import Physics from "./Modals/Physics";
+import Raspberry from "./Modals/Raspberry";
+import Bridge from "./Modals/Bridge";
 
 function Home() {
   
@@ -38,8 +49,30 @@ function Home() {
           return <UT/>;
         case 'stonk':
           return <Stonk/>;
+        case 'git':
+          return <Github/>;
+        case 'twitter':
+          return <Twitter/>;
+        case 'linked':
+          return <Linkedin/>;
+        case 'freelance':
+          return <Freelance/>;
+        case 'RDS':
+          return <RDS/>;
+        case 'expo':
+          return <Kinnickinick/>;
+        case 'columbine':
+          return <Columbine/>;
+        case 'personal':
+          return <Personal/>; 
+        case 'physics':
+          return <Physics/>; 
+        case 'pi':
+          return <Raspberry/>;
+        case 'bridge':
+          return <Bridge/>;
         default:
-          return <h1>Not LSU</h1>
+          return <h1>Error</h1>
       }
     }
     return (
@@ -57,11 +90,9 @@ function Home() {
           </div>
         </div>
         <div className="fullWidth">
-          
           <React.Fragment>
             <svg id="bubbleChart" className="fullWidth" ref={bubbleChartNode}></svg>
           </React.Fragment>
-          
           
           <Modal isOpen={modalOpenArray['activated']!=='none'}>
             {getOpenModal(modalOpenArray)}

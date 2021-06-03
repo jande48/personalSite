@@ -10,6 +10,9 @@
   margin: 10px 10px !important;
   padding: 5 !important;
 }
+.yellowStar{
+  color: #F2E600;
+}
 .flexContainer {
   display: flex;
   flex-flow: row;

@@ -24,6 +24,7 @@ function UT() {
             <h4>Advisors: <a class="link-primary" href="https://www.beg.utexas.edu/people/michael-young">
                 Dr. Michael Young </a> &  
                 <a class="link-primary" href="https://www.beg.utexas.edu/people/susan-hovorka"> Dr. Susan Hovorka</a></h4>
+            <hr class="solid"></hr>
             <h4>Publications: </h4>
             <h4><a class="link-primary" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ghg.1841">
                 Light hydrocarbon and noble gas
@@ -31,12 +32,10 @@ function UT() {
                 CO<sub>2</sub> leakage: numerical simulations
                 and field data from three hydrocarbon
                 systems</a></h4>
-            <hr class="solid"></hr>
             <h4><a class="link-primary" href="https://www.sciencedirect.com/science/article/abs/pii/S1750583617308344">
                 Assessment of shallow subsea hydrocarbons 
                 as a proxy for leakage at offshore geologic 
                 CO<sub>2</sub> storage sites</a></h4>
-            <hr class="solid"></hr>
             <h4><a class="link-primary" href="https://www.sciencedirect.com/science/article/abs/pii/S0009254117301122">
                 Gas source attribution techniques for assessing leakage at geologic CO<sub>2</sub>
                 storage sites: Evaluating a CO<sub>2</sub> and CH<sub>4</sub> soil gas anomaly at the Cranfield

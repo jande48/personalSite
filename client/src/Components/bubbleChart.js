@@ -111,10 +111,6 @@ function bubbleChart(refNode, setModalOpen) {
           return t => zoomTo(i(t));
         });
 
-    // fillRect
-    //   .transition(transition)
-    //     .style("fill-opacity", d => focus.depth==3 && focus.height ==0 ? 1 : 0)
-
     label
       .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
       .transition(transition)

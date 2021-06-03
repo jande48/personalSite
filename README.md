@@ -1,7 +1,7 @@
-flask-react-nginx
+Jacob Anderson PhD (jacobanderson.dev)
 =================
 
-flask-react-nginx guide using docker-compose
+This is the personal site for jacobanderson.dev
 
 client
 ------
@@ -11,14 +11,14 @@ The client directory was created using `create-react-app`. There are two Dockerf
 server
 ------
 
-The server is responsible for exposing an api endpoint for client consumption. In this example, the client consumes the `/api/test/` endpoint in the `index.js` file.
+The server is a flask backend responsible for exposing an api endpoint for client consumption. 
 
 Development
 -----------
-
+`docker-compose -f conf/docker-dev.yml build`
 `docker-compose -f conf/docker-dev.yml up`
 
-I have made this easier by adding a dev script
+bash dev script:
 
 `./scripts/dev.sh`
 
@@ -26,15 +26,10 @@ I have made this easier by adding a dev script
 
 Production
 ----------
-
+`docker-compose -f conf/docker-prod.yml build`
 `docker-compose -f conf/docker-prod.yml up`
 
-I have made this easier by adding a production script
+bash production script
 
 `./scripts/prod.sh`
 
-Usage
------
-
-- expose new api endpoints in the server view
-- read from endpoints in client
